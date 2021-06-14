@@ -1,0 +1,12 @@
+https://medium.com/weekly-webtips/building-restful-apis-with-node-js-and-express-a9f648219f5b
+
+
+
+info:
+mongod --config /usr/local/etc/mongod.conf
+instead of mongod (if I'm not mistaken)
+
+
+//also works 
+
+brew services start mongodb-community

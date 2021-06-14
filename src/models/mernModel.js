@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 export const BookSchema = new Schema({
   title: {
     type: String,
-    required: "Enter title",
+    required: true,
   },
   author: {
     type: String,
