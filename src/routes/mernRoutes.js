@@ -1,6 +1,7 @@
 import {
   addNewBook,
   getBooks,
+  getCovers,
   getBookWithID,
   updateBook,
   deleteBook,
@@ -8,6 +9,8 @@ import {
 
 const routes = (app) => {
   app.route("/books").get(getBooks).post(addNewBook);
+  app.route("/books/covers").get(getCovers);
+
   app
     .route("/books/:bookID")
     .get(getBookWithID)

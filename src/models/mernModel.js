@@ -7,7 +7,14 @@ export const BookSchema = new Schema({
   },
   author: {
     type: String,
-    // required: "Enter author",
+    required: "Enter author",
+  },
+  photoURL: {
+    type: String,
+    required: "Enter photoURL",
+  },
+  description: {
+    type: String,
   },
   publicationYear: {
     type: Number,
@@ -15,6 +22,7 @@ export const BookSchema = new Schema({
   averageRating: {
     type: Number,
   },
+  //add page number
   dateAdded: {
     type: Date,
     default: Date.now,

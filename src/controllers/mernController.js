@@ -23,6 +23,15 @@ export const getBooks = (req, res) => {
   });
 };
 
+export const getCovers = (req, res) => {
+  Book.find({}, (err, book) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(book);
+  }).select("photoURL");
+};
+
 export const getBookWithID = (req, res) => {
   Book.findById(req.params.bookID, (err, book) => {
     if (err) {
@@ -49,7 +58,7 @@ export const updateBook = (req, res) => {
 };
 
 export const deleteBook = (req, res) => {
-  Book.deleteOne({ _id: req.params.donationID }, (err, book) => {
+  Book.deleteOne({ _id: req.params.bookID }, (err, book) => {
     if (err) {
       res.send(err);
     }
