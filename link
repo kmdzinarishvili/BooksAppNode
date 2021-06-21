@@ -10,3 +10,7 @@ instead of mongod (if I'm not mistaken)
 //also works 
 
 brew services start mongodb-community
+
+
+c to c node app archtecture
+
