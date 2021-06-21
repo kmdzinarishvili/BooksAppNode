@@ -22,10 +22,9 @@ export const BookSchema = new Schema({
   averageRating: {
     type: Number,
   },
-  pageNumber: {
+  numPages: {
     type: Number,
   },
-  //add page number
   dateAdded: {
     type: Date,
     default: Date.now,
