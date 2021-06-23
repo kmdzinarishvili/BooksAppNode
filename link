@@ -14,3 +14,14 @@ brew services start mongodb-community
 
 c to c node app archtecture
 
+//for when the database needs to be stopped 
+pgrep mongo
+and kill -15 [pid number]
+
+
+brew services start mongodb-community@4.4
+
+brew services stop mongodb-community@4.4
+
+
+

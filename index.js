@@ -12,20 +12,23 @@ app.listen(PORT, () => console.log(`Your server is running on port ${PORT}`));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
 
 routes(app);
 //crud
-
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/booksmdb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.set("debug", true);
+mongoose
+  .connect("mongodb://localhost/booksmdb", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("connected!!!");
+  })
+  .catch((err) => {
+    console.log("connection failed", err);
+  });
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error:"));
+// db.once("open", function () {
+//   console.log("we're connected !");
+// });
