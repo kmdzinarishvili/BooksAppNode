@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import routes from "./src/routes/mernRoutes";
+//cors
 
 const app = express();
 const PORT = 4000;
